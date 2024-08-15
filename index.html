@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Students Information List</h1>
+        <div class="form">
+            <button class="add-new" id="btnAdd" onclick="showForm()">+ Add New</button>
+            <div class="form-fields" id="form-fields" style="display: none;">
+                <input type="number" id="auto" placeholder="N" disabled>
+                <input type="text" id="name" placeholder="Name" oninput="validateInput(this)">
+                <select id="gender">
+                    <option value="">Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="number" id="age" placeholder="Age" oninput="validateAge(this)">
+                <input type="email" id="email" placeholder="Email" oninput="validateInput(this)">
+                <select id="province">
+                    <option value="">Province</option>
+                    <option value="Phnom Penh">Phnom Penh</option>
+                    <option value="Kampong Speu Province">Kampong Speu Province</option>
+                    <option value="Kampot">Kampot</option>
+                    <option value="Kampong Thom">Kampong Thom</option>
+                    <option value="Kandal">Kandal</option>
+                    <option value="Kep">Kep</option>
+                    <option value="Koh Kong">Koh Kong</option>
+                    <option value="Kratie">Kratie</option>
+                    <option value="Banteay meanchey">Banteay meanchey</option>
+                    <option value="Battambang">Battambang</option>
+                    <option value="Mondulkiri">Mondulkiri</option>
+                    <option value="Siemp Reap">Siemp Reap</option>
+                    <option value="Svay Rieng">Svay Rieng</option>
+                    <option value="Preah Vihear">Preah Vihear</option>
+                    <option value="Prey Veng">Prey Veng</option>
+                    <option value="Ratanakiri">Ratanakiri</option>
+                    <option value="Preah Sihanoukville">Preah Sihanoukville</option>
+                    <option value="Takeo">Takeo</option>
+                    <option value="Pailin">Pailin</option>
+                    <option value="Oddar Meanchey">Oddar meanchey</option>
+                    <option value="Tbong Khmun">Kampot</option>
+                    <option value="Pursat">Pursat</option>
+                    <option value="Stung Treng">Stung Treng</option>
+                    <option value="Other">Other...</option>
+                </select>
+                <button class="addbtn" id="btnAddForm" onclick="addStudent()">Add</button>
+                <button class="hideForm" onclick="hideForm()">Hide</button>
+                <button id="cancel-button" onclick="cancelEdit()">Cancel</button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Province</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="student-list">
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
